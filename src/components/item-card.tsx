@@ -32,7 +32,7 @@ export function ItemCard({ item, compact = false }: { item: Item; compact?: bool
         </span>
       </div>
 
-      <h3 className={cn("mt-2 font-medium leading-snug text-pretty", compact ? "text-sm" : "text-[15px]")}>
+      <h3 className={cn("mt-2 font-medium leading-snug text-pretty", compact ? "line-clamp-3 text-sm" : "text-[15px]")}>
         <a href={item.url} target="_blank" rel="noopener noreferrer" className="hover:underline underline-offset-2">
           {item.title}
           <ExternalLink className="ml-1 inline size-3 opacity-0 transition-opacity group-hover:opacity-60" />

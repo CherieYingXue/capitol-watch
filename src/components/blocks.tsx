@@ -57,7 +57,7 @@ export function ItemList({ items, empty, compact }: { items: Item[]; empty: stri
   );
 }
 
-export function ChinaBanner({ alerts }: { alerts: Item[] }) {
+export function ChinaBanner({ alerts, showLink = true }: { alerts: Item[]; showLink?: boolean }) {
   if (alerts.length === 0) {
     return (
       <div className="mb-6 flex items-center gap-3 rounded-xl border bg-card p-4 text-sm">
@@ -81,7 +81,7 @@ export function ChinaBanner({ alerts }: { alerts: Item[] }) {
           </p>
           <ul className="mt-2 space-y-1.5">
             {top.map((a) => (
-              <li key={a.id} className="text-sm">
+              <li key={a.id} className="line-clamp-2 text-sm">
                 <a href={a.url} target="_blank" rel="noopener noreferrer" className="font-medium text-red-950 hover:underline">
                   {a.title}
                 </a>
@@ -90,12 +90,12 @@ export function ChinaBanner({ alerts }: { alerts: Item[] }) {
             ))}
           </ul>
         </div>
-        <Link
+        {showLink && <Link
           href="/china"
           className="inline-flex h-9 shrink-0 items-center gap-1.5 rounded-lg bg-red-600 px-3 text-sm font-medium text-white hover:bg-red-700"
         >
           Open China Watch <ArrowRight className="size-4" />
-        </Link>
+        </Link>}
       </div>
     </div>
   );

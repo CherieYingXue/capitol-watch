@@ -66,7 +66,7 @@ export function detectChina(text: string, official: boolean): ChinaMatch {
   let level: ChinaLevel | null = null;
   if (strongest >= 2) {
     if (score >= 6 || (strongest === 3 && official)) level = "high";
-    else if (strongest === 3 || score >= 4) level = "medium";
+    else if (strongest === 3 || score >= 4 || official) level = "medium";
     else level = "low";
   }
   return { score, level, terms: level ? terms : [] };

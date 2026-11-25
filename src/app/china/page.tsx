@@ -27,7 +27,7 @@ export default async function ChinaPage() {
         <NotifyToggle />
       </PageHeader>
 
-      <ChinaBanner alerts={alerts} />
+      <ChinaBanner alerts={alerts} showLink={false} />
 
       <div className="mb-8 grid gap-3 md:grid-cols-3">
         <div className="rounded-xl border bg-card p-4">
@@ -39,11 +39,11 @@ export default async function ChinaPage() {
             </li>
             <li>
               <span className="mr-1.5 rounded bg-amber-100 px-1.5 py-0.5 text-xs font-medium text-amber-900">medium</span>
-              Direct China reference in news, or multiple policy signals
+              Direct China reference in news, or official action on China-adjacent policy
             </li>
             <li>
               <span className="mr-1.5 rounded bg-yellow-50 px-1.5 py-0.5 text-xs font-medium text-yellow-800">low</span>
-              China-adjacent policy (export controls, rare earths…) only
+              News on China-adjacent policy (export controls, rare earths…) only
             </li>
           </ul>
         </div>
