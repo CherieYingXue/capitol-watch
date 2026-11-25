@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: capitol-watch
+    runtime: node
+    plan: free
+    region: virginia
+    buildCommand: npm ci && npm run build
+    startCommand: npm run start
+    healthCheckPath: /api/china
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: NEXT_TELEMETRY_DISABLED
+        value: "1"
+      - key: CONGRESS_API_KEY
+        sync: false
